@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Custom Order — PrintForge</title>
+  <meta name="description" content="Request a custom 3D print from PrintForge. Send us your STL or describe your idea and we'll quote within 24 hours.">
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/style.css">
+  <script>if(localStorage.getItem('printforge_theme')==='dark')document.documentElement.setAttribute('data-theme','dark');</script>
+</head>
+<body>
+
+  <!-- ── Navbar ─────────────────────────────────────────────── -->
+  <nav class="navbar">
+    <div class="container navbar__inner">
+      <a href="index.html" class="navbar__logo">Print<span>Forge</span></a>
+      <ul class="navbar__links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="browse.html">Browse</a></li>
+        <li><a href="custom-order.html" class="active">Custom Order</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="navbar__actions">
+        <a href="cart.html" class="cart-btn" aria-label="View cart">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z"/></svg>
+          Cart
+          <span id="cart-badge"></span>
+        </a>
+        <button class="hamburger" id="hamburger" aria-label="Open menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+  <div class="mobile-nav" id="mobile-nav">
+    <a href="index.html">Home</a>
+    <a href="browse.html">Browse</a>
+    <a href="custom-order.html">Custom Order</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <a href="cart.html">Cart</a>
+  </div>
+
+  <!-- ── Page Hero ───────────────────────────────────────────── -->
+  <section class="page-hero">
+    <div class="container">
+      <h1>Custom Order</h1>
+      <p>Have a design in mind? We'll print it. Fill in the form below and we'll quote within 24 hours.</p>
+    </div>
+  </section>
+
+  <!-- ── How custom orders work ─────────────────────────────── -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="steps-grid">
+        <div class="step-card">
+          <div class="step-card__number">1</div>
+          <div class="step-card__icon">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z"/></svg>
+          </div>
+          <h3>Submit Your Brief</h3>
+          <p>Describe your print or share your STL file link. The more detail you give us, the faster we can quote.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-card__number">2</div>
+          <div class="step-card__icon">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75"/></svg>
+          </div>
+          <h3>Receive Your Quote</h3>
+          <p>We review your request and email back a price and turnaround estimate, usually within a few hours.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-card__number">3</div>
+          <div class="step-card__icon">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5"/></svg>
+          </div>
+          <h3>Approve &amp; We Print</h3>
+          <p>Happy with the quote? Confirm and we get to work. Your custom piece ships as soon as it passes our quality check.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Custom Order Form ───────────────────────────────────── -->
+  <section class="section">
+    <div class="container">
+      <div class="custom-order-layout">
+
+        <div class="contact-form-wrap">
+          <h2>Tell Us About Your Project</h2>
+          <p>The more detail you include, the faster we can turn around a quote. All fields marked <span style="color:var(--clr-accent);">*</span> are required.</p>
+
+          <form id="custom-order-form" novalidate>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="co-first">First Name <span>*</span></label>
+                <input type="text" id="co-first" name="first_name" placeholder="Alex" required>
+              </div>
+              <div class="form-group">
+                <label for="co-last">Last Name <span>*</span></label>
+                <input type="text" id="co-last" name="last_name" placeholder="Smith" required>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="co-email">Email Address <span>*</span></label>
+              <input type="email" id="co-email" name="from_email" placeholder="you@example.com" required>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="co-material">Preferred Material</label>
+                <select id="co-material" name="material">
+                  <option value="" disabled selected>Select material…</option>
+                  <option value="PLA">PLA (standard, great detail)</option>
+                  <option value="PLA+">PLA+ (stronger, smoother)</option>
+                  <option value="PETG">PETG (heat &amp; UV resistant)</option>
+                  <option value="Not sure">Not sure — advise me</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="co-qty">Quantity <span>*</span></label>
+                <input type="number" id="co-qty" name="quantity" min="1" max="999" placeholder="1" required>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="co-colour">Colour Preference</label>
+              <input type="text" id="co-colour" name="colour" placeholder="e.g. Matte black, Galaxy silver, or any colour">
+            </div>
+
+            <div class="form-group">
+              <label for="co-file">STL / File Link</label>
+              <input type="url" id="co-file" name="file_link" placeholder="https://www.thingiverse.com/thing:... or Google Drive link">
+              <small style="color:var(--clr-muted);font-size:.78rem;margin-top:4px;display:block;">Share a link to your STL, OBJ, or 3MF file. We accept Thingiverse, Google Drive, Dropbox, etc.</small>
+            </div>
+
+            <div class="form-group">
+              <label for="co-desc">Project Description <span>*</span></label>
+              <textarea id="co-desc" name="description" placeholder="Describe what you need — dimensions, finish, intended use, any reference images. The more detail, the better!" required></textarea>
+            </div>
+
+            <div class="form-group">
+              <label for="co-deadline">Deadline (optional)</label>
+              <input type="date" id="co-deadline" name="deadline">
+            </div>
+
+            <button type="submit" class="btn btn--primary btn--lg" id="co-submit-btn">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" style="width:18px;height:18px"><path stroke-linecap="round" stroke-linejoin="round" d="M6 12 3.269 3.125A59.769 59.769 0 0 1 21.485 12 59.768 59.768 0 0 1 3.27 20.875L5.999 12Zm0 0h7.5"/></svg>
+              Submit Quote Request
+            </button>
+            <div class="form-status" id="co-form-status"></div>
+          </form>
+        </div>
+
+        <aside class="contact-info">
+          <h2>Good to Know</h2>
+
+          <div class="contact-item">
+            <div class="contact-item__icon">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/></svg>
+            </div>
+            <div class="contact-item__text">
+              <h4>Quote Turnaround</h4>
+              <p>We'll respond within 24 hours — usually the same day.</p>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-item__icon">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 0 1-1.043 3.296 3.745 3.745 0 0 1-3.296 1.043A3.745 3.745 0 0 1 12 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 0 1-3.296-1.043 3.745 3.745 0 0 1-1.043-3.296A3.745 3.745 0 0 1 3 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 0 1 1.043-3.296 3.746 3.746 0 0 1 3.296-1.043A3.746 3.746 0 0 1 12 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 0 1 3.296 1.043 3.746 3.746 0 0 1 1.043 3.296A3.745 3.745 0 0 1 21 12Z"/></svg>
+            </div>
+            <div class="contact-item__text">
+              <h4>No Commitment</h4>
+              <p>Quotes are free with no obligation. Only proceed if you're happy with the price.</p>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-item__icon">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9.594 3.94c.09-.542.56-.94 1.11-.94h2.593c.55 0 1.02.398 1.11.94l.213 1.281c.063.374.313.686.645.87.074.04.147.083.22.127.325.196.72.257 1.075.124l1.217-.456a1.125 1.125 0 0 1 1.37.49l1.296 2.247a1.125 1.125 0 0 1-.26 1.431l-1.003.827c-.293.241-.438.613-.43.992a7.723 7.723 0 0 1 0 .255c-.008.378.137.75.43.991l1.004.827c.424.35.534.955.26 1.43l-1.298 2.247a1.125 1.125 0 0 1-1.369.491l-1.217-.456c-.355-.133-.75-.072-1.076.124a6.47 6.47 0 0 1-.22.128c-.331.183-.581.495-.644.869l-.213 1.281c-.09.543-.56.94-1.11.94h-2.594c-.55 0-1.019-.398-1.11-.94l-.213-1.281c-.062-.374-.312-.686-.644-.87a6.52 6.52 0 0 1-.22-.127c-.325-.196-.72-.257-1.076-.124l-1.217.456a1.125 1.125 0 0 1-1.369-.49l-1.297-2.247a1.125 1.125 0 0 1 .26-1.431l1.004-.827c.292-.24.437-.613.43-.991a6.932 6.932 0 0 1 0-.255c.007-.38-.138-.751-.43-.992l-1.004-.827a1.125 1.125 0 0 1-.26-1.43l1.297-2.247a1.125 1.125 0 0 1 1.37-.491l1.216.456c.356.133.751.072 1.076-.124.072-.044.146-.086.22-.128.332-.183.582-.495.644-.869l.214-1.28Z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"/></svg>
+            </div>
+            <div class="contact-item__text">
+              <h4>Accepted File Types</h4>
+              <p>STL, OBJ, 3MF. Share via Google Drive, Dropbox, Thingiverse, or any public link.</p>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-item__icon">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 18.75a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 0 1-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m3 0h1.125c.621 0 1.129-.504 1.09-1.124a17.902 17.902 0 0 0-3.213-9.193 2.056 2.056 0 0 0-1.58-.86H14.25M16.5 18.75h-2.25m0-11.177v-.958c0-.568-.422-1.048-.987-1.106a48.554 48.554 0 0 0-10.026 0 1.106 1.106 0 0 0-.987 1.106v7.635m12-6.677v6.677m0 4.5v-4.5m0 0h-12"/></svg>
+            </div>
+            <div class="contact-item__text">
+              <h4>Bulk Orders</h4>
+              <p>Ordering more than 10 units? Mention it in your description — we offer volume pricing.</p>
+            </div>
+          </div>
+        </aside>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Footer ─────────────────────────────────────────────── -->
+  <footer class="footer" style="margin-top:56px;">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <div class="footer__logo">PrintForge</div>
+          <p>High-quality custom 3D printing for collectors, gamers, designers and everyone in between.</p>
+          <div class="social-links">
+            <a href="#" aria-label="Instagram"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg></a>
+            <a href="#" aria-label="TikTok"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></a>
+            <a href="#" aria-label="Pinterest"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12c0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738a.36.36 0 0 1 .083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.632-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0z"/></svg></a>
+          </div>
+        </div>
+        <div class="footer__col">
+          <h4>Shop</h4>
+          <a href="browse.html">All Prints</a>
+          <a href="browse.html?category=Figurines">Figurines</a>
+          <a href="browse.html?category=Functional">Functional</a>
+          <a href="browse.html?category=Decorative">Decorative</a>
+          <a href="custom-order.html">Custom Order</a>
+        </div>
+        <div class="footer__col">
+          <h4>Company</h4>
+          <a href="about.html">About Us</a>
+          <a href="contact.html">Contact</a>
+          <a href="faq.html">FAQ</a>
+          <a href="shipping.html">Shipping &amp; Returns</a>
+          <a href="cart.html">Your Cart</a>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>&copy; 2025 PrintForge. All rights reserved.</span>
+        <span>Built with passion &amp; PLA</span>
+      </div>
+    </div>
+  </footer>
+
+  <div id="toast"></div>
+  <script src="js/data.js"></script>
+  <script src="js/cart-store.js"></script>
+  <script src="js/theme.js"></script>
+  <script src="js/cookie-banner.js"></script>
+  <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    Cart.init();
+    const btn = document.getElementById('hamburger');
+    const nav = document.getElementById('mobile-nav');
+    if (btn && nav) btn.addEventListener('click', () => nav.classList.toggle('open'));
+
+    document.getElementById('custom-order-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const status = document.getElementById('co-form-status');
+      const submitBtn = document.getElementById('co-submit-btn');
+
+      // Basic validation
+      const email = document.getElementById('co-email').value.trim();
+      if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        status.className = 'form-status error';
+        status.textContent = 'Please enter a valid email address.';
+        return;
+      }
+
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Sending…';
+
+      // Simulate sending
+      setTimeout(() => {
+        status.className = 'form-status success';
+        status.textContent = "Request sent! We'll review your project and get back to you within 24 hours.";
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" style="width:18px;height:18px"><path stroke-linecap="round" stroke-linejoin="round" d="M6 12 3.269 3.125A59.769 59.769 0 0 1 21.485 12 59.768 59.768 0 0 1 3.27 20.875L5.999 12Zm0 0h7.5"/></svg> Submit Quote Request`;
+        this.reset();
+      }, 1200);
+    });
+  });
+  </script>
+</body>
+</html>

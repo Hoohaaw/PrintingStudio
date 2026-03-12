@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shipping &amp; Returns — PrintForge</title>
+  <meta name="description" content="PrintForge shipping times, rates, and returns policy. Free shipping on orders over $50.">
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/style.css">
+  <script>if(localStorage.getItem('printforge_theme')==='dark')document.documentElement.setAttribute('data-theme','dark');</script>
+</head>
+<body>
+
+  <!-- ── Navbar ─────────────────────────────────────────────── -->
+  <nav class="navbar">
+    <div class="container navbar__inner">
+      <a href="index.html" class="navbar__logo">Print<span>Forge</span></a>
+      <ul class="navbar__links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="browse.html">Browse</a></li>
+        <li><a href="custom-order.html">Custom Order</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="navbar__actions">
+        <a href="cart.html" class="cart-btn" aria-label="View cart">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z"/></svg>
+          Cart
+          <span id="cart-badge"></span>
+        </a>
+        <button class="hamburger" id="hamburger" aria-label="Open menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+  <div class="mobile-nav" id="mobile-nav">
+    <a href="index.html">Home</a>
+    <a href="browse.html">Browse</a>
+    <a href="custom-order.html">Custom Order</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <a href="cart.html">Cart</a>
+  </div>
+
+  <!-- ── Page Hero ───────────────────────────────────────────── -->
+  <section class="page-hero">
+    <div class="container">
+      <h1>Shipping &amp; Returns</h1>
+      <p>Everything you need to know about getting your order and what to do if something goes wrong.</p>
+    </div>
+  </section>
+
+  <!-- ── Content ────────────────────────────────────────────── -->
+  <section class="section">
+    <div class="container" style="max-width:800px;">
+
+      <!-- Shipping rates table -->
+      <h2 style="margin-bottom:20px;">Shipping Rates &amp; Times</h2>
+      <table class="shipping-table">
+        <thead>
+          <tr>
+            <th>Order Value</th>
+            <th>Shipping Rate</th>
+            <th>Estimated Delivery</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Under $50</td>
+            <td>$5.99 flat rate</td>
+            <td>3–7 business days</td>
+          </tr>
+          <tr>
+            <td>$50 and over</td>
+            <td><strong style="color:var(--clr-success);">Free</strong></td>
+            <td>3–7 business days</td>
+          </tr>
+          <tr>
+            <td>International</td>
+            <td>From $14.99</td>
+            <td>7–21 business days</td>
+          </tr>
+          <tr>
+            <td>Express (domestic)</td>
+            <td>From $12.99</td>
+            <td>1–2 business days</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p style="font-size:.85rem;color:var(--clr-muted);margin-top:12px;">
+        Delivery times are estimates and start from the dispatch date, not the order date. Most items are printed and dispatched within 3–5 business days. During peak periods, dispatch may take slightly longer — we'll always keep you informed.
+      </p>
+
+      <!-- Dispatch times -->
+      <h2 style="margin:40px 0 16px;">Print &amp; Dispatch Times</h2>
+      <p>Every item at PrintForge is printed fresh to order — we don't hold shelf stock. Here's a typical timeline:</p>
+      <ul style="margin:16px 0 16px 20px;line-height:2;color:var(--clr-text);">
+        <li><strong>Order received</strong> — we confirm via email within a few hours</li>
+        <li><strong>Day 1–3</strong> — your item is printed and goes through our quality check</li>
+        <li><strong>Day 3–5</strong> — packed, labelled, and handed to the courier</li>
+        <li><strong>Day 5–12</strong> — delivered to your door (domestic estimate)</li>
+      </ul>
+      <p>You'll receive an email with a tracking number once your order ships.</p>
+
+      <!-- Packaging -->
+      <h2 style="margin:40px 0 16px;">Packaging</h2>
+      <p>We pack all orders in protective foam-lined boxes or padded mailers depending on size. Fragile items receive extra bubble wrap. We use recycled and recyclable materials wherever possible. If you need gift wrapping or a personalised note, just mention it in the order notes on the contact form.</p>
+
+      <!-- Returns -->
+      <h2 style="margin:40px 0 16px;">Returns &amp; Refunds</h2>
+
+      <h3 style="font-size:1rem;font-weight:700;margin-bottom:8px;">Defective or Wrong Item</h3>
+      <p>If your item arrives damaged, defective, or is not what you ordered, contact us within <strong>14 days</strong> of delivery. We'll either:</p>
+      <ul style="margin:12px 0 12px 20px;line-height:2;">
+        <li>Reprint and reship the correct item at no charge, or</li>
+        <li>Refund the full order amount including shipping</li>
+      </ul>
+      <p>Please include a photo of the issue in your email — it helps us improve.</p>
+
+      <h3 style="font-size:1rem;font-weight:700;margin:24px 0 8px;">Change of Mind</h3>
+      <p>Because items are printed on demand, we can't accept returns for change of mind. However, we want you to be happy — if you're not 100% satisfied for any reason, contact us and we'll do our best to find a solution, whether that's a reprint in a different colour or store credit.</p>
+
+      <h3 style="font-size:1rem;font-weight:700;margin:24px 0 8px;">Custom Orders</h3>
+      <p>Custom prints are non-refundable once printing has begun, unless they arrive defective. We recommend approving a detailed brief before we start to avoid any misunderstandings.</p>
+
+      <h3 style="font-size:1rem;font-weight:700;margin:24px 0 8px;">How to Start a Return</h3>
+      <ol style="margin:12px 0 12px 20px;line-height:2;">
+        <li>Email us at <a href="mailto:hello@printforge.com" style="color:var(--clr-accent);">hello@printforge.com</a> with your order details</li>
+        <li>Include photos if the item is damaged or wrong</li>
+        <li>We'll respond within 24 hours with next steps</li>
+        <li>Do not return items without prior authorisation — unauthorised returns cannot be processed</li>
+      </ol>
+
+      <!-- Cookies note -->
+      <h2 style="margin:40px 0 16px;">Cookies &amp; Privacy</h2>
+      <p>We use cookies solely to save your cart and remember your theme preference. We don't use tracking cookies or share your data with third parties. By using the site you agree to this minimal use of local storage. You can clear your browser data at any time to remove stored preferences.</p>
+
+      <!-- CTA -->
+      <div style="margin-top:48px;padding:28px;background:var(--clr-bg-alt);border-radius:16px;text-align:center;">
+        <h3 style="margin-bottom:8px;">Still have questions?</h3>
+        <p style="color:var(--clr-muted);margin-bottom:20px;">Our FAQ covers most common topics, or reach out and we'll sort it out.</p>
+        <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+          <a href="faq.html" class="btn btn--outline">View FAQ</a>
+          <a href="contact.html" class="btn btn--primary">Contact Us</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── Footer ─────────────────────────────────────────────── -->
+  <footer class="footer" style="margin-top:56px;">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <div class="footer__logo">PrintForge</div>
+          <p>High-quality custom 3D printing for collectors, gamers, designers and everyone in between.</p>
+          <div class="social-links">
+            <a href="#" aria-label="Instagram"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg></a>
+            <a href="#" aria-label="TikTok"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></a>
+            <a href="#" aria-label="Pinterest"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12c0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738a.36.36 0 0 1 .083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.632-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0z"/></svg></a>
+          </div>
+        </div>
+        <div class="footer__col">
+          <h4>Shop</h4>
+          <a href="browse.html">All Prints</a>
+          <a href="browse.html?category=Figurines">Figurines</a>
+          <a href="browse.html?category=Functional">Functional</a>
+          <a href="browse.html?category=Decorative">Decorative</a>
+          <a href="custom-order.html">Custom Order</a>
+        </div>
+        <div class="footer__col">
+          <h4>Company</h4>
+          <a href="about.html">About Us</a>
+          <a href="contact.html">Contact</a>
+          <a href="faq.html">FAQ</a>
+          <a href="shipping.html">Shipping &amp; Returns</a>
+          <a href="cart.html">Your Cart</a>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>&copy; 2025 PrintForge. All rights reserved.</span>
+        <span>Built with passion &amp; PLA</span>
+      </div>
+    </div>
+  </footer>
+
+  <div id="toast"></div>
+  <script src="js/data.js"></script>
+  <script src="js/cart-store.js"></script>
+  <script src="js/theme.js"></script>
+  <script src="js/cookie-banner.js"></script>
+  <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    Cart.init();
+    const btn = document.getElementById('hamburger');
+    const nav = document.getElementById('mobile-nav');
+    if (btn && nav) btn.addEventListener('click', () => nav.classList.toggle('open'));
+  });
+  </script>
+</body>
+</html>

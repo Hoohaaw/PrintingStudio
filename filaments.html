@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Filament Guide — PrintForge</title>
+  <meta name="description" content="Everything you need to know about 3D printing filaments — PLA, PETG, TPU and more. Learn about materials, food safety, and how FDM printing works.">
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/style.css">
+  <script>if(localStorage.getItem('printforge_theme')==='dark')document.documentElement.setAttribute('data-theme','dark');</script>
+</head>
+<body>
+
+  <!-- ── Navbar ─────────────────────────────────────────────── -->
+  <nav class="navbar">
+    <div class="container navbar__inner">
+      <a href="index.html" class="navbar__logo">Print<span>Forge</span></a>
+      <ul class="navbar__links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="browse.html">Browse</a></li>
+        <li><a href="custom-order.html">Custom Order</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="navbar__actions">
+        <a href="cart.html" class="cart-btn" aria-label="View cart">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z"/></svg>
+          Cart
+          <span id="cart-badge"></span>
+        </a>
+        <button class="hamburger" id="hamburger" aria-label="Open menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+  <div class="mobile-nav" id="mobile-nav">
+    <a href="index.html">Home</a>
+    <a href="browse.html">Browse</a>
+    <a href="custom-order.html">Custom Order</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <a href="cart.html">Cart</a>
+  </div>
+
+  <!-- ── Page Hero ───────────────────────────────────────────── -->
+  <section class="page-hero">
+    <div class="container">
+      <h1>The Filament Guide</h1>
+      <p>Everything you need to know about 3D printing materials — what they are, what they're for, and what to watch out for.</p>
+    </div>
+  </section>
+
+  <!-- ── Intro ───────────────────────────────────────────────── -->
+  <section class="section">
+    <div class="container" style="max-width:800px;">
+
+      <h2 style="margin-bottom:16px;">How FDM 3D Printing Works</h2>
+      <p style="line-height:1.8;margin-bottom:16px;">
+        All of our prints use <strong>Fused Deposition Modelling (FDM)</strong> — the most common form of consumer and professional 3D printing. A spool of plastic filament (a long, thin strand typically 1.75 mm in diameter) is fed into a heated nozzle called the <strong>hotend</strong>. The nozzle melts the filament and precisely deposits it in thin lines, layer by layer, until the object is complete.
+      </p>
+      <p style="line-height:1.8;margin-bottom:16px;">
+        The printer moves along three axes (X, Y, Z) guided by a sliced digital model. Each layer bonds to the one below it as the plastic cools and solidifies. The result is a strong, lightweight object — but one that is fundamentally built from stacked horizontal layers, which is important to understand when thinking about strength, surface finish, and safety.
+      </p>
+
+      <!-- Key concepts grid -->
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin:32px 0;">
+        <div style="background:var(--clr-bg-alt);border:1px solid var(--clr-border);border-radius:12px;padding:20px;">
+          <h4 style="margin-bottom:6px;">Layer Height</h4>
+          <p style="font-size:.85rem;color:var(--clr-muted);line-height:1.6;">The thickness of each deposited layer. Lower = more detail and smoother finish but longer print time. Typical range: 0.05 mm–0.3 mm.</p>
+        </div>
+        <div style="background:var(--clr-bg-alt);border:1px solid var(--clr-border);border-radius:12px;padding:20px;">
+          <h4 style="margin-bottom:6px;">Infill</h4>
+          <p style="font-size:.85rem;color:var(--clr-muted);line-height:1.6;">The internal structure of a print, expressed as a percentage. 15–20% for lightweight decorative items; 40–80%+ for structural or load-bearing parts.</p>
+        </div>
+        <div style="background:var(--clr-bg-alt);border:1px solid var(--clr-border);border-radius:12px;padding:20px;">
+          <h4 style="margin-bottom:6px;">Print Speed</h4>
+          <p style="font-size:.85rem;color:var(--clr-muted);line-height:1.6;">Faster prints reduce time but can introduce imperfections. We tune speed per-material to balance quality and efficiency.</p>
+        </div>
+        <div style="background:var(--clr-bg-alt);border:1px solid var(--clr-border);border-radius:12px;padding:20px;">
+          <h4 style="margin-bottom:6px;">Supports</h4>
+          <p style="font-size:.85rem;color:var(--clr-muted);line-height:1.6;">Overhanging parts of a model need temporary support structures during printing. These are removed afterwards, sometimes leaving faint marks.</p>
+        </div>
+        <div style="background:var(--clr-bg-alt);border:1px solid var(--clr-border);border-radius:12px;padding:20px;">
+          <h4 style="margin-bottom:6px;">Bed Adhesion</h4>
+          <p style="font-size:.85rem;color:var(--clr-muted);line-height:1.6;">The first layer must stick firmly to the print bed. A slightly rough first-layer bottom is normal on most FDM prints.</p>
+        </div>
+        <div style="background:var(--clr-bg-alt);border:1px solid var(--clr-border);border-radius:12px;padding:20px;">
+          <h4 style="margin-bottom:6px;">Post-Processing</h4>
+          <p style="font-size:.85rem;color:var(--clr-muted);line-height:1.6;">Sanding, priming, and painting can dramatically improve surface finish. We apply these on selected products for display-ready results.</p>
+        </div>
+      </div>
+
+      <!-- ═══════════════════════════════════════════════════════ -->
+      <!-- FOOD SAFETY WARNING — prominent callout                -->
+      <!-- ═══════════════════════════════════════════════════════ -->
+      <div class="filament-warning">
+        <div class="filament-warning__icon">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126ZM12 15.75h.007v.008H12v-.008Z"/></svg>
+        </div>
+        <div>
+          <h3>Why FDM Prints Are Not Food Safe</h3>
+          <p>
+            This is one of the most important things to understand about 3D printed objects. <strong>Even if a filament is labelled "food-safe", the final print almost certainly is not.</strong> Here's why:
+          </p>
+          <ul>
+            <li>
+              <strong>Layer lines create micro-gaps.</strong> Every FDM print is made of stacked layers. Between those layers are tiny ridges and gaps — microscopic crevices that are impossible to clean reliably. Bacteria, mould, and food particles lodge in these gaps and cannot be removed by washing.
+            </li>
+            <li>
+              <strong>Porous surface structure.</strong> Even a "smooth" FDM print has a porous surface at the microscopic level. Liquids and oils can wick into the material itself. Over time, this creates a breeding ground for pathogens that no amount of soap and water will reach.
+            </li>
+            <li>
+              <strong>Dyes and additives.</strong> Coloured filaments contain pigments and chemical additives to produce their colour or finish. These are not food-grade compounds and can leach into food or liquid, especially when heated.
+            </li>
+            <li>
+              <strong>The nozzle itself.</strong> Standard brass nozzles contain small amounts of lead. Even food-safe filament extruded through a standard nozzle picks up trace metal contamination. Stainless steel nozzles reduce this, but don't eliminate the other issues.
+            </li>
+            <li>
+              <strong>Moisture and temperature degradation.</strong> Over time, PLA (and other filaments) absorb moisture and can begin to break down at the surface, further compromising any theoretical food safety.
+            </li>
+          </ul>
+          <p style="margin-top:12px;">
+            <strong>Bottom line:</strong> Our prints are decorative, functional, and collectible — but they should not be used as food or drink containers, cutlery, or any item that will come into contact with food. If you need to hold dry items (like a bowl for sweets still in wrappers), a sealed, food-safe coating can help, but contact us to discuss first.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── Filament Types ──────────────────────────────────────── -->
+  <section class="section section--alt">
+    <div class="container" style="max-width:900px;">
+      <div class="section__header">
+        <h2>Filament Types We Use</h2>
+        <p>Each material has its own strengths, limitations, and ideal applications. Here's a detailed breakdown.</p>
+      </div>
+
+      <!-- PLA -->
+      <div class="filament-card">
+        <div class="filament-card__header">
+          <div class="filament-card__badge" style="background:#d1fae5;color:#065f46;">Most Common</div>
+          <h3>PLA — Polylactic Acid</h3>
+          <p class="filament-card__temp">Nozzle: ~200°C &nbsp;|&nbsp; Bed: ~60°C (or none)</p>
+        </div>
+        <div class="filament-card__body">
+          <p>
+            PLA is the most widely used FDM filament — and for good reason. It's derived from renewable plant starch (typically corn or sugarcane), which makes it <strong>biodegradable under industrial composting conditions</strong>. It prints at relatively low temperatures, adheres well to the print bed, and produces crisp, detailed results.
+          </p>
+          <p>
+            For figurines, decorative pieces, display models, and toys, PLA is our default choice. The low printing temperature means it doesn't warp as aggressively as other materials, and its stiffness makes it ideal for holding fine details like scales, threads, and text.
+          </p>
+          <div class="filament-card__props">
+            <div class="filament-prop filament-prop--good">
+              <strong>Strengths</strong>
+              <ul>
+                <li>Excellent detail reproduction</li>
+                <li>Easy to print — minimal warping</li>
+                <li>Available in hundreds of colours</li>
+                <li>Biodegradable (industrial compost)</li>
+                <li>Low odour when printing</li>
+              </ul>
+            </div>
+            <div class="filament-prop filament-prop--bad">
+              <strong>Limitations</strong>
+              <ul>
+                <li>Low heat resistance (~55–60°C softening point)</li>
+                <li>Brittle under sharp impacts</li>
+                <li>Degrades in prolonged UV exposure</li>
+                <li>Not suitable for outdoor use long-term</li>
+                <li>Not food safe (see above)</li>
+              </ul>
+            </div>
+          </div>
+          <p class="filament-card__use"><strong>Best for:</strong> Figurines, display models, decorative objects, indoor toys, prototypes.</p>
+        </div>
+      </div>
+
+      <!-- PLA+ -->
+      <div class="filament-card">
+        <div class="filament-card__header">
+          <div class="filament-card__badge" style="background:#dbeafe;color:#1e40af;">Upgraded PLA</div>
+          <h3>PLA+ — Enhanced Polylactic Acid</h3>
+          <p class="filament-card__temp">Nozzle: ~210–230°C &nbsp;|&nbsp; Bed: ~60°C</p>
+        </div>
+        <div class="filament-card__body">
+          <p>
+            PLA+ is a modified version of standard PLA with additives (typically impact modifiers and plasticisers) that improve toughness, flexibility, and surface smoothness. It's not a different polymer — it's PLA engineered to perform better under stress.
+          </p>
+          <p>
+            The result is a material that behaves much like PLA in terms of ease of printing, but is noticeably less brittle and produces a slightly shinier surface finish straight off the printer. We use PLA+ for items that need a premium feel or where standard PLA might crack under handling.
+          </p>
+          <div class="filament-card__props">
+            <div class="filament-prop filament-prop--good">
+              <strong>Strengths</strong>
+              <ul>
+                <li>Tougher and less brittle than PLA</li>
+                <li>Smoother surface finish</li>
+                <li>Still easy to print</li>
+                <li>Good layer adhesion</li>
+              </ul>
+            </div>
+            <div class="filament-prop filament-prop--bad">
+              <strong>Limitations</strong>
+              <ul>
+                <li>Similar heat resistance to PLA</li>
+                <li>Slightly harder to sand than PLA</li>
+                <li>Not food safe</li>
+              </ul>
+            </div>
+          </div>
+          <p class="filament-card__use"><strong>Best for:</strong> Display figurines, models requiring extra durability, items that will be handled regularly.</p>
+        </div>
+      </div>
+
+      <!-- PETG -->
+      <div class="filament-card">
+        <div class="filament-card__header">
+          <div class="filament-card__badge" style="background:#fef3c7;color:#92400e;">Functional Favourite</div>
+          <h3>PETG — Polyethylene Terephthalate Glycol</h3>
+          <p class="filament-card__temp">Nozzle: ~230–250°C &nbsp;|&nbsp; Bed: ~70–85°C</p>
+        </div>
+        <div class="filament-card__body">
+          <p>
+            PETG is a modified version of PET — the same polymer used in water bottles. The addition of glycol (the "G" in PETG) makes it much easier to print than standard PET while retaining excellent mechanical properties. It's our go-to for anything functional.
+          </p>
+          <p>
+            PETG is <strong>heat-resistant up to around 80°C</strong>, making it safe to use near electronics, in warm environments, and outdoors in most climates. It's also naturally UV-resistant, semi-flexible (it bends slightly before breaking rather than shattering), and has excellent layer adhesion which gives it impressive strength.
+          </p>
+          <div class="filament-card__props">
+            <div class="filament-prop filament-prop--good">
+              <strong>Strengths</strong>
+              <ul>
+                <li>Heat resistant up to ~80°C</li>
+                <li>UV resistant — suitable outdoors</li>
+                <li>Semi-flexible, impact resistant</li>
+                <li>Excellent layer bonding / strength</li>
+                <li>Food-grade polymer base (but prints still not food safe — see above)</li>
+              </ul>
+            </div>
+            <div class="filament-prop filament-prop--bad">
+              <strong>Limitations</strong>
+              <ul>
+                <li>Prone to stringing if settings aren't dialled in</li>
+                <li>More difficult to sand and post-process than PLA</li>
+                <li>Absorbs moisture from air — must be kept dry</li>
+                <li>Slightly more expensive than PLA</li>
+              </ul>
+            </div>
+          </div>
+          <p class="filament-card__use"><strong>Best for:</strong> Functional parts, cable organizers, outdoor planters, items near heat sources, structural components.</p>
+        </div>
+      </div>
+
+      <!-- TPU -->
+      <div class="filament-card">
+        <div class="filament-card__header">
+          <div class="filament-card__badge" style="background:#ede9fe;color:#5b21b6;">Flexible</div>
+          <h3>TPU — Thermoplastic Polyurethane</h3>
+          <p class="filament-card__temp">Nozzle: ~220–240°C &nbsp;|&nbsp; Bed: ~30–60°C</p>
+        </div>
+        <div class="filament-card__body">
+          <p>
+            TPU is a rubber-like flexible filament. Unlike PLA or PETG which are rigid, TPU can be bent, squeezed, and stretched repeatedly without breaking. Think of it like printing with flexible silicone — it bounces back to shape.
+          </p>
+          <p>
+            It's significantly harder to print than rigid filaments (it tends to buckle in the extruder if the settings aren't perfect), but the results are unique — you simply cannot replicate a flexible, grippy, rubber feel with any other common 3D printing material.
+          </p>
+          <div class="filament-card__props">
+            <div class="filament-prop filament-prop--good">
+              <strong>Strengths</strong>
+              <ul>
+                <li>Highly flexible and compressible</li>
+                <li>Excellent abrasion resistance</li>
+                <li>Good impact absorption</li>
+                <li>Chemical resistance</li>
+              </ul>
+            </div>
+            <div class="filament-prop filament-prop--bad">
+              <strong>Limitations</strong>
+              <ul>
+                <li>Difficult to print — needs slow, careful settings</li>
+                <li>Poor bridging and overhang performance</li>
+                <li>Hard to support</li>
+                <li>Not food safe</li>
+              </ul>
+            </div>
+          </div>
+          <p class="filament-card__use"><strong>Best for:</strong> Phone cases, gaskets, grips, shock absorbers, wearable accessories, fidget items.</p>
+        </div>
+      </div>
+
+      <!-- ASA -->
+      <div class="filament-card">
+        <div class="filament-card__header">
+          <div class="filament-card__badge" style="background:#fee2e2;color:#991b1b;">Outdoor Pro</div>
+          <h3>ASA — Acrylonitrile Styrene Acrylate</h3>
+          <p class="filament-card__temp">Nozzle: ~240–260°C &nbsp;|&nbsp; Bed: ~90–110°C</p>
+        </div>
+        <div class="filament-card__body">
+          <p>
+            ASA is the outdoor-specialist filament. It's chemically similar to ABS but with significantly better UV resistance — it won't yellow, become brittle, or fade in direct sunlight the way ABS does. It's also more heat-resistant than PETG, with a softening point around 95–100°C.
+          </p>
+          <p>
+            The trade-off is that ASA is one of the most demanding materials to print. It requires a high bed temperature, an enclosed printer to prevent warping from drafts, and adequate ventilation — it produces fumes when printing that should not be inhaled.
+          </p>
+          <div class="filament-card__props">
+            <div class="filament-prop filament-prop--good">
+              <strong>Strengths</strong>
+              <ul>
+                <li>Excellent UV resistance — won't yellow outdoors</li>
+                <li>High heat resistance (~95–100°C)</li>
+                <li>Good mechanical strength</li>
+                <li>Weather and moisture resistant</li>
+              </ul>
+            </div>
+            <div class="filament-prop filament-prop--bad">
+              <strong>Limitations</strong>
+              <ul>
+                <li>Requires high temperatures — harder to print</li>
+                <li>Prone to warping without an enclosure</li>
+                <li>Emits fumes — ventilation required</li>
+                <li>Not food safe</li>
+              </ul>
+            </div>
+          </div>
+          <p class="filament-card__use"><strong>Best for:</strong> Outdoor signage, garden fixtures, automotive parts, anything permanently exposed to sunlight.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── Printing Intricacies ────────────────────────────────── -->
+  <section class="section">
+    <div class="container" style="max-width:800px;">
+      <div class="section__header">
+        <h2>The Intricacies of Printing</h2>
+        <p>Getting a great print isn't just pressing a button. Here's what goes on behind the scenes.</p>
+      </div>
+
+      <h3 style="margin-bottom:12px;">Moisture — the Silent Enemy</h3>
+      <p style="line-height:1.8;margin-bottom:24px;">
+        Most filaments are <strong>hygroscopic</strong> — they absorb moisture from the air. A spool of PETG or Nylon left open on a humid day can absorb enough water to make printing difficult or even impossible. When wet filament is heated in the nozzle, the water turns to steam, causing <strong>bubbling, popping, and voids</strong> in the print. We store all our filaments in sealed containers with desiccant and dry them in a filament dryer before use.
+      </p>
+
+      <h3 style="margin-bottom:12px;">Warping and Thermal Stress</h3>
+      <p style="line-height:1.8;margin-bottom:24px;">
+        As plastic cools, it contracts. When different parts of a print cool at different rates, internal stresses build up — this can cause the corners of a print to <strong>lift off the bed (warping)</strong> or even crack layers apart. Materials like ABS, ASA, and Nylon are particularly prone to this. Solutions include heated beds, enclosed printers, brims (wide border around the base of the print), and careful bed adhesion preparation.
+      </p>
+
+      <h3 style="margin-bottom:12px;">Stringing and Ooze</h3>
+      <p style="line-height:1.8;margin-bottom:24px;">
+        When the print head moves across empty space (a "travel move"), molten plastic can ooze out of the nozzle and leave thin strands between parts of the print — called <strong>stringing</strong>. This is controlled by a "retraction" setting that pulls the filament back slightly before each travel move. Getting retraction right is one of the more nuanced parts of dialling in a print profile, especially with PETG which is prone to stringing.
+      </p>
+
+      <h3 style="margin-bottom:12px;">Layer Adhesion and Anisotropy</h3>
+      <p style="line-height:1.8;margin-bottom:24px;">
+        FDM prints are <strong>anisotropic</strong> — meaning they are stronger in some directions than others. A print is strongest along the X and Y axes (across a layer) and weakest along the Z axis (between layers). This is because layers bond together through a combination of heat and pressure, but this bond is never as strong as the material itself. For structural parts, we orient the model so the weakest direction is not where the stress will be applied.
+      </p>
+
+      <h3 style="margin-bottom:12px;">Overhangs and Support Structures</h3>
+      <p style="line-height:1.8;margin-bottom:24px;">
+        FDM can only print material where there is something underneath to support it. Parts of a model that overhang at more than roughly <strong>45–50°</strong> from vertical need support structures — temporary pillars of material printed below the overhanging section. These supports are removed after printing but can leave marks on the surface. For display-quality pieces, we orient and design models to minimise support contact on visible surfaces.
+      </p>
+
+      <h3 style="margin-bottom:12px;">First Layer Calibration</h3>
+      <p style="line-height:1.8;">
+        The very first layer is arguably the most critical. Too far from the bed and it won't adhere; too close and the nozzle scrapes or blocks. A perfect first layer is slightly "squished" into the bed, creating a wide, flat line with good adhesion. Getting this right requires precise <strong>bed levelling</strong> and Z-offset calibration — something we check every print run. The first-layer bottom of a print often has a slightly different texture to the rest of the object — this is completely normal.
+      </p>
+
+    </div>
+  </section>
+
+  <!-- ── Choosing a Filament ─────────────────────────────────── -->
+  <section class="section section--alt">
+    <div class="container" style="max-width:800px;">
+      <div class="section__header">
+        <h2>How to Choose the Right Material</h2>
+        <p>Not sure what you need? Use this quick guide.</p>
+      </div>
+      <table class="shipping-table">
+        <thead>
+          <tr>
+            <th>I need…</th>
+            <th>Recommended material</th>
+            <th>Why</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>A detailed figurine or collectible</td>
+            <td><strong>PLA or PLA+</strong></td>
+            <td>Best detail resolution, easy to sand and paint</td>
+          </tr>
+          <tr>
+            <td>A functional part that gets handled a lot</td>
+            <td><strong>PLA+ or PETG</strong></td>
+            <td>Better impact resistance than standard PLA</td>
+          </tr>
+          <tr>
+            <td>Something near heat (e.g. near a window or PSU)</td>
+            <td><strong>PETG</strong></td>
+            <td>Softening point ~80°C vs PLA's ~55°C</td>
+          </tr>
+          <tr>
+            <td>An outdoor item exposed to sunlight</td>
+            <td><strong>ASA or PETG</strong></td>
+            <td>UV-resistant; won't yellow or become brittle</td>
+          </tr>
+          <tr>
+            <td>Something flexible — a grip, case, or gasket</td>
+            <td><strong>TPU</strong></td>
+            <td>Rubber-like, won't crack under repeated flex</td>
+          </tr>
+          <tr>
+            <td>The lowest possible cost per print</td>
+            <td><strong>PLA</strong></td>
+            <td>Cheapest per kg, easiest to print (less waste)</td>
+          </tr>
+          <tr>
+            <td>Maximum structural strength</td>
+            <td><strong>PETG or ASA</strong></td>
+            <td>Better layer adhesion and toughness than PLA</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p style="margin-top:20px;font-size:.88rem;color:var(--clr-muted);line-height:1.7;">
+        Not sure which material suits your custom project? Just describe what you need on the <a href="custom-order.html" style="color:var(--clr-accent);">Custom Order page</a> and we'll advise the best option as part of your free quote.
+      </p>
+    </div>
+  </section>
+
+  <!-- ── CTA ─────────────────────────────────────────────────── -->
+  <section class="section">
+    <div class="container" style="text-align:center;max-width:560px;">
+      <h2 style="font-size:clamp(1.5rem,3vw,2rem);font-weight:800;margin-bottom:12px;">Ready to put it into practice?</h2>
+      <p style="color:var(--clr-muted);margin-bottom:28px;">Browse our catalogue to see what each material looks like in a finished print, or send us your custom brief.</p>
+      <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+        <a href="browse.html" class="btn btn--primary btn--lg">Browse Prints</a>
+        <a href="custom-order.html" class="btn btn--outline btn--lg">Request a Custom Quote</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Footer ─────────────────────────────────────────────── -->
+  <footer class="footer" style="margin-top:56px;">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <div class="footer__logo">PrintForge</div>
+          <p>High-quality custom 3D printing for collectors, gamers, designers and everyone in between.</p>
+          <div class="social-links">
+            <a href="#" aria-label="Instagram"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg></a>
+            <a href="#" aria-label="TikTok"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></a>
+            <a href="#" aria-label="Pinterest"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12c0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738a.36.36 0 0 1 .083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.632-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0z"/></svg></a>
+          </div>
+        </div>
+        <div class="footer__col">
+          <h4>Shop</h4>
+          <a href="browse.html">All Prints</a>
+          <a href="browse.html?category=Figurines">Figurines</a>
+          <a href="browse.html?category=Functional">Functional</a>
+          <a href="browse.html?category=Decorative">Decorative</a>
+          <a href="custom-order.html">Custom Order</a>
+        </div>
+        <div class="footer__col">
+          <h4>Company</h4>
+          <a href="about.html">About Us</a>
+          <a href="contact.html">Contact</a>
+          <a href="faq.html">FAQ</a>
+          <a href="filaments.html">Filament Guide</a>
+          <a href="shipping.html">Shipping &amp; Returns</a>
+          <a href="cart.html">Your Cart</a>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>&copy; 2025 PrintForge. All rights reserved.</span>
+        <span>Built with passion &amp; PLA</span>
+      </div>
+    </div>
+  </footer>
+
+  <div id="toast"></div>
+  <script src="js/data.js"></script>
+  <script src="js/cart-store.js"></script>
+  <script src="js/theme.js"></script>
+  <script src="js/cookie-banner.js"></script>
+  <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    Cart.init();
+    const btn = document.getElementById('hamburger');
+    const nav = document.getElementById('mobile-nav');
+    if (btn && nav) btn.addEventListener('click', () => nav.classList.toggle('open'));
+  });
+  </script>
+</body>
+</html>

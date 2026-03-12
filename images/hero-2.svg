@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 560">
+  <defs>
+    <linearGradient id="g2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#1e3a5f"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="560" fill="url(#g2)"/>
+  <g stroke="rgba(99,179,237,0.08)" stroke-width="1">
+    <line x1="0" y1="112" x2="1200" y2="112"/>
+    <line x1="0" y1="224" x2="1200" y2="224"/>
+    <line x1="0" y1="336" x2="1200" y2="336"/>
+    <line x1="0" y1="448" x2="1200" y2="448"/>
+    <line x1="200" y1="0" x2="200" y2="560"/>
+    <line x1="400" y1="0" x2="400" y2="560"/>
+    <line x1="600" y1="0" x2="600" y2="560"/>
+    <line x1="800" y1="0" x2="800" y2="560"/>
+    <line x1="1000" y1="0" x2="1000" y2="560"/>
+  </g>
+  <!-- dragon silhouette (simple) -->
+  <g transform="translate(750,120)" opacity="0.15" fill="white">
+    <ellipse cx="150" cy="160" rx="120" ry="80"/>
+    <polygon points="150,80 110,160 190,160"/>
+    <polygon points="80,120 30,60 100,140"/>
+    <polygon points="220,120 270,60 200,140"/>
+    <ellipse cx="150" cy="270" rx="40" ry="60"/>
+    <polygon points="150,330 130,400 170,400"/>
+  </g>
+  <circle cx="1100" cy="120" r="180" fill="rgba(37,99,235,0.08)"/>
+  <circle cx="200" cy="480" r="100" fill="rgba(37,99,235,0.06)"/>
+</svg>
